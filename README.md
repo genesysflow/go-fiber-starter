@@ -1,9 +1,5 @@
 <div align="center" id="top"> 
   <img src="./.github/app.gif" alt="Go Fiber Starter" />
-
-&#xa0;
-
-  <!-- <a href="https://gofiberstarter.netlify.app">Demo</a> -->
 </div>
 
 <h1 align="center">Go Fiber Starter</h1>
@@ -24,13 +20,6 @@
   <img alt="Github stars" src="https://img.shields.io/github/stars/genesysflow/go-fiber-starter?color=56BEB8" />
 </p>
 
-<!-- Status -->
-
-<!-- <h4 align="center">
-	🚧  Go Fiber Starter 🚀 Under construction...  🚧
-</h4>
-
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -53,6 +42,7 @@ Simple and scalable starter kit to build powerful and organized REST projects wi
 - [x] Logging
 - [x] Repository Pattern
 - [x] ORM database with Gorm
+- [x] Redis cache with go-redis
 - [x] Mocking with GoMock
 - [x] Api documentation with Swaggo
 - [x] Support JWT authentication

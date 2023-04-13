@@ -8,6 +8,7 @@ import (
 	"github.com/genesysflow/go-fiber-starter/app/module/article"
 	"github.com/genesysflow/go-fiber-starter/app/router"
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap"
+	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/cache"
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/database"
 	"github.com/genesysflow/go-fiber-starter/utils/config"
 	_ "go.uber.org/automaxprocs"
@@ -39,6 +40,8 @@ func main() {
 		fx.Provide(bootstrap.NewFiber),
 		// database
 		fx.Provide(database.NewDatabase),
+		// cache
+		fx.Provide(cache.NewCache),
 		// middleware
 		fx.Provide(middleware.NewMiddleware),
 		// router
@@ -47,7 +50,7 @@ func main() {
 		// provide modules
 		article.NewArticleModule,
 
-		// start aplication
+		// start application
 		fx.Invoke(bootstrap.Start),
 
 		// define logger
