@@ -89,7 +89,7 @@ $ go run cmd/example/main.go
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
-Made with :heart: by <a href="https://github.com/bangadam" target="_blank">bangadam.dev</a>
+Forked from by <a href="https://github.com/bangadam/go-fiber-starter" target="_blank">bangadam/go-fiber-starter</a>
 
 &#xa0;
 
