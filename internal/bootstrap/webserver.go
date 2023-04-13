@@ -10,6 +10,7 @@ import (
 
 	"github.com/genesysflow/go-fiber-starter/app/middleware"
 	"github.com/genesysflow/go-fiber-starter/app/router"
+	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/cache"
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/database"
 	"github.com/genesysflow/go-fiber-starter/utils/config"
 	"github.com/genesysflow/go-fiber-starter/utils/response"
@@ -40,7 +41,16 @@ func NewFiber(cfg *config.Config) *fiber.App {
 }
 
 // function to start webserver
-func Start(lifecycle fx.Lifecycle, cfg *config.Config, fiber *fiber.App, router *router.Router, middlewares *middleware.Middleware, database *database.Database, log zerolog.Logger) {
+func Start(
+	lifecycle fx.Lifecycle, 
+	cfg *config.Config, 
+	fiber *fiber.App, 
+	router *router.Router, 
+	middlewares *middleware.Middleware, 
+	database *database.Database,
+	cache *cache.Cache,
+	log zerolog.Logger,
+) {
 	lifecycle.Append(
 		fx.Hook{
 			OnStart: func(ctx context.Context) error {
@@ -104,6 +114,8 @@ func Start(lifecycle fx.Lifecycle, cfg *config.Config, fiber *fiber.App, router 
 					}
 				}()
 
+				cache.ConnectCache()
+
 				database.ConnectDatabase()
 
 				migrate := flag.Bool("migrate", false, "migrate the database")
@@ -128,8 +140,12 @@ func Start(lifecycle fx.Lifecycle, cfg *config.Config, fiber *fiber.App, router 
 				}
 
 				log.Info().Msg("Running cleanup tasks...")
-				log.Info().Msg("1- Shutdown the database")
+				log.Info().Msg("1- Shutting down the database")
 				database.ShutdownDatabase()
+
+				log.Info().Msg("2- Shutting down the cache")
+				cache.ShutdownCache()
+
 				log.Info().Msgf("%s was successful shutdown.", cfg.App.Name)
 				log.Info().Msg("\u001b[96msee you again👋\u001b[0m")
 

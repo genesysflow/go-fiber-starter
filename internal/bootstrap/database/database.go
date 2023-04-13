@@ -33,9 +33,9 @@ func NewDatabase(cfg *config.Config, log zerolog.Logger) *Database {
 func (_db *Database) ConnectDatabase() {
 	conn, err := gorm.Open(postgres.Open(_db.Cfg.DB.Postgres.DSN), &gorm.Config{})
 	if err != nil {
-		_db.Log.Error().Err(err).Msg("An unknown error occurred when to connect the database!")
+		_db.Log.Error().Err(err).Msg("An unknown error occurred while trying to connect the database!")
 	} else {
-		_db.Log.Info().Msg("Connected the database successfully!")
+		_db.Log.Info().Msg("Connected to the database successfully!")
 	}
 
 	_db.DB = conn

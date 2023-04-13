@@ -15,7 +15,7 @@ import (
 )
 
 // app struct config
-type app = struct {
+type app struct {
 	Name        string        `toml:"name"`
 	Port        string        `toml:"port"`
 	PrintRoutes bool          `toml:"print-routes"`
@@ -30,21 +30,27 @@ type app = struct {
 }
 
 // db struct config
-type db = struct {
+type db struct {
 	Postgres struct {
 		DSN string `toml:"dsn"`
 	}
 }
 
+type cache struct {
+	Redis struct {
+		URL string `toml:"url"`
+	}
+}
+
 // log struct config
-type logger = struct {
+type logger struct {
 	TimeFormat string        `toml:"time-format"`
 	Level      zerolog.Level `toml:"level"`
 	Prettier   bool          `toml:"prettier"`
 }
 
 // middleware
-type middleware = struct {
+type middleware struct {
 	Compress struct {
 		Enable bool
 		Level  compress.Level
@@ -86,6 +92,7 @@ type middleware = struct {
 type Config struct {
 	App        app
 	DB         db
+	Cache      cache
 	Logger     logger
 	Middleware middleware
 }
