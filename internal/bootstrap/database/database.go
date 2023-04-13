@@ -35,7 +35,7 @@ func (_db *Database) ConnectDatabase() {
 	if err != nil {
 		_db.Log.Error().Err(err).Msg("An unknown error occurred when to connect the database!")
 	} else {
-		_db.Log.Info().Msg("Connected the database succesfully!")
+		_db.Log.Info().Msg("Connected the database successfully!")
 	}
 
 	_db.DB = conn
@@ -47,7 +47,7 @@ func (_db *Database) ShutdownDatabase() {
 	if err != nil {
 		_db.Log.Error().Err(err).Msg("An unknown error occurred when to shutdown the database!")
 	} else {
-		_db.Log.Info().Msg("Shutdown the database succesfully!")
+		_db.Log.Info().Msg("Shutdown the database successfully!")
 	}
 	sqlDB.Close()
 }
@@ -81,11 +81,11 @@ func (_db *Database) SeedModels(seeder ...Seeder) {
 				_db.Log.Error().Err(err).Msg("An unknown error occurred when to seed the database!")
 			}
 
-			_db.Log.Info().Msg("Seeded the database succesfully!")
+			_db.Log.Info().Msg("Seeded the database successfully!")
 		} else {
 			_db.Log.Info().Msg("Database is already seeded!")
 		}
 	}
 
-	_db.Log.Info().Msg("Seeded the database succesfully!")
+	_db.Log.Info().Msg("Seeded the database successfully!")
 }
