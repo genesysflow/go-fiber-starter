@@ -5,7 +5,6 @@ import (
 	"flag"
 	"os"
 	"runtime"
-	"strings"
 	"time"
 
 	"github.com/genesysflow/go-fiber-starter/app/middleware"
@@ -17,8 +16,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/rs/zerolog"
 	"go.uber.org/fx"
-
-	futils "github.com/gofiber/fiber/v2/utils"
 )
 
 // initialize the webserver
@@ -42,11 +39,11 @@ func NewFiber(cfg *config.Config) *fiber.App {
 
 // function to start webserver
 func Start(
-	lifecycle fx.Lifecycle, 
-	cfg *config.Config, 
-	fiber *fiber.App, 
-	router *router.Router, 
-	middlewares *middleware.Middleware, 
+	lifecycle fx.Lifecycle,
+	cfg *config.Config,
+	fiber *fiber.App,
+	router *router.Router,
+	middlewares *middleware.Middleware,
 	database *database.Database,
 	cache *cache.Cache,
 	log zerolog.Logger,
@@ -66,16 +63,6 @@ func Start(
 					} else {
 						host = "0.0.0.0"
 					}
-				}
-
-				// ASCII Art
-				ascii, err := os.ReadFile("./storage/ascii_art.txt")
-				if err != nil {
-					log.Debug().Err(err).Msg("An unknown error occurred when to print ASCII art!")
-				}
-
-				for _, line := range strings.Split(futils.UnsafeString(ascii), "\n") {
-					log.Info().Msg(line)
 				}
 
 				// Information message
