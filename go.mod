@@ -1,4 +1,4 @@
-module github.com/bangadam/go-fiber-starter
+module github.com/genesysflow/go-fiber-starter
 
 go 1.18
 

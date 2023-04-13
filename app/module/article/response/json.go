@@ -3,7 +3,7 @@ package response
 import (
 	"time"
 
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
 )
 
 type Article struct {
@@ -18,7 +18,7 @@ type Article struct {
 func FromDomain(article *schema.Article) (res *Article) {
 	if article != nil {
 		res = &Article{
-			ID: 	article.ID,
+			ID:        article.ID,
 			Title:     article.Title,
 			Content:   article.Content,
 			CreatedAt: article.CreatedAt,

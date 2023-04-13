@@ -1,10 +1,10 @@
 package service
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/module/article/repository"
-	"github.com/bangadam/go-fiber-starter/app/module/article/request"
-	"github.com/bangadam/go-fiber-starter/app/module/article/response"
-	"github.com/bangadam/go-fiber-starter/utils/paginator"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/repository"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/request"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/response"
+	"github.com/genesysflow/go-fiber-starter/utils/paginator"
 )
 
 // ArticleService
@@ -12,8 +12,9 @@ type articleService struct {
 	Repo repository.ArticleRepository
 }
 
-//go:generate mockgen -destination=article_service_mock.go -package=service . ArticleService
 // define interface of IArticleService
+//
+//go:generate mockgen -destination=article_service_mock.go -package=service . ArticleService
 type ArticleService interface {
 	All(req request.ArticlesRequest) (articles []*response.Article, paging paginator.Pagination, err error)
 	Show(id uint64) (article *response.Article, err error)

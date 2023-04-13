@@ -1,8 +1,8 @@
 package request
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
-	"github.com/bangadam/go-fiber-starter/utils/paginator"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/utils/paginator"
 )
 
 type ArticleRequest struct {

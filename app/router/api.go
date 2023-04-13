@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/module/article"
-	"github.com/bangadam/go-fiber-starter/utils/config"
+	"github.com/genesysflow/go-fiber-starter/app/module/article"
+	"github.com/genesysflow/go-fiber-starter/utils/config"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/swagger"
 )

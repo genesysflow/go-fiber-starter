@@ -1,8 +1,8 @@
 package database
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
-	"github.com/bangadam/go-fiber-starter/utils/config"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/utils/config"
 	"github.com/rs/zerolog"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

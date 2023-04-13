@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
-	"github.com/bangadam/go-fiber-starter/app/module/article/repository"
-	"github.com/bangadam/go-fiber-starter/app/module/article/request"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/repository"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/request"
 	gomock "github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

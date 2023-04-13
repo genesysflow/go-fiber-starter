@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
-	"github.com/bangadam/go-fiber-starter/internal/bootstrap/database"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/database"
 )
 
 type userRepository struct {

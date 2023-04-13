@@ -3,10 +3,10 @@ package service
 import (
 	"errors"
 
-	"github.com/bangadam/go-fiber-starter/app/middleware"
-	"github.com/bangadam/go-fiber-starter/app/module/auth/request"
-	"github.com/bangadam/go-fiber-starter/app/module/auth/response"
-	user_repo "github.com/bangadam/go-fiber-starter/app/module/user/repository"
+	"github.com/genesysflow/go-fiber-starter/app/middleware"
+	"github.com/genesysflow/go-fiber-starter/app/module/auth/request"
+	"github.com/genesysflow/go-fiber-starter/app/module/auth/response"
+	user_repo "github.com/genesysflow/go-fiber-starter/app/module/user/repository"
 )
 
 // AuthService
@@ -14,8 +14,9 @@ type articleService struct {
 	userRepo user_repo.UserRepository
 }
 
-//go:generate mockgen -destination=article_service_mock.go -package=service . AuthService
 // define interface of IAuthService
+//
+//go:generate mockgen -destination=article_service_mock.go -package=service . AuthService
 type AuthService interface {
 	Login(req request.LoginRequest) (res response.LoginResponse, err error)
 }

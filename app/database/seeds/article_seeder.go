@@ -1,7 +1,7 @@
 package seeds
 
 import (
-	"github.com/bangadam/go-fiber-starter/app/database/schema"
+	"github.com/genesysflow/go-fiber-starter/app/database/schema"
 	"gorm.io/gorm"
 )
 

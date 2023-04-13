@@ -3,10 +3,10 @@ package controller
 import (
 	"strconv"
 
-	"github.com/bangadam/go-fiber-starter/app/module/article/request"
-	"github.com/bangadam/go-fiber-starter/app/module/article/service"
-	"github.com/bangadam/go-fiber-starter/utils/paginator"
-	"github.com/bangadam/go-fiber-starter/utils/response"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/request"
+	"github.com/genesysflow/go-fiber-starter/app/module/article/service"
+	"github.com/genesysflow/go-fiber-starter/utils/paginator"
+	"github.com/genesysflow/go-fiber-starter/utils/response"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -56,7 +56,7 @@ func (_i *articleController) Index(c *fiber.Ctx) error {
 	return response.Resp(c, response.Response{
 		Messages: response.Messages{"Article list successfully retrieved"},
 		Data:     articles,
-		Meta:    paging,
+		Meta:     paging,
 	})
 }
 
