@@ -17,7 +17,7 @@ require (
 	github.com/redis/go-redis/v9 v9.0.3
 	github.com/rs/zerolog v1.29.1
 	github.com/stretchr/testify v1.8.2
-	github.com/swaggo/swag v1.8.12
+	github.com/swaggo/swag v1.16.1
 	go.uber.org/automaxprocs v1.5.2
 	go.uber.org/fx v1.19.2
 	gorm.io/driver/postgres v1.5.0
