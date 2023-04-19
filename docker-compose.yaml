@@ -21,17 +21,17 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - app
-  example:
-    build:
-      context: .
-      dockerfile: build/Dockerfile${CUSTOM}
-    depends_on:
-      - postgres
-    links:
-      - postgres
-    volumes:
-      - .:/app
-    networks:
-      - app
-    ports:
-      - "8080:8080"
+  # example:
+  #   build:
+  #     context: .
+  #     dockerfile: build/Dockerfile${CUSTOM}
+  #   depends_on:
+  #     - postgres
+  #   links:
+  #     - postgres
+  #   volumes:
+  #     - .:/app
+  #   networks:
+  #     - app
+  #   ports:
+  #     - "8080:8080"

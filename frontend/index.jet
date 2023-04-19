@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>My app</title>
+    {{ glue.RenderTags() | raw }}
+</head>
+<body>
+
+<div id="app" data-page='{{ page | json }}'></div>
+
+</body>
+</html>

@@ -22,11 +22,16 @@ type app struct {
 	Prefork     bool          `toml:"prefork"`
 	Production  bool          `toml:"production"`
 	IdleTimeout time.Duration `toml:"idle-timeout"`
+	URL         string        `toml:"url"`
 	TLS         struct {
 		Enable   bool   `toml:"enable"`
 		CertFile string `toml:"cert-file"`
 		KeyFile  string `toml:"key-file"`
 	}
+}
+
+type inertia struct {
+	Manifest string `toml:"manifest"`
 }
 
 // db struct config
@@ -75,14 +80,6 @@ type middleware struct {
 		Expiration time.Duration `toml:"expiration_seconds"`
 	}
 
-	FileSystem struct {
-		Enable bool
-		Browse bool
-		MaxAge int `toml:"max_age"`
-		Index  string
-		Root   string
-	}
-
 	Jwt struct {
 		Secret     string        `toml:"secret"`
 		Expiration time.Duration `toml:"expiration_seconds"`
@@ -91,6 +88,7 @@ type middleware struct {
 
 type Config struct {
 	App        app
+	Inertia    inertia
 	DB         db
 	Cache      cache
 	Logger     logger

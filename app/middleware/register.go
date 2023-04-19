@@ -1,14 +1,13 @@
 package middleware
 
 import (
-	"net/http"
 	"time"
 
+	"github.com/genesysflow/go-fiber-starter/internal/inertia"
 	"github.com/genesysflow/go-fiber-starter/utils"
 	"github.com/genesysflow/go-fiber-starter/utils/config"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/compress"
-	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/fiber/v2/middleware/limiter"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"github.com/gofiber/fiber/v2/middleware/pprof"
@@ -17,14 +16,16 @@ import (
 
 // Middleware is a struct that contains all the middleware functions
 type Middleware struct {
-	App *fiber.App
-	Cfg *config.Config
+	App     *fiber.App
+	Cfg     *config.Config
+	Inertia inertia.Inertia
 }
 
-func NewMiddleware(app *fiber.App, cfg *config.Config) *Middleware {
+func NewMiddleware(app *fiber.App, cfg *config.Config, inertia *inertia.Inertia) *Middleware {
 	return &Middleware{
-		App: app,
-		Cfg: cfg,
+		App:     app,
+		Cfg:     cfg,
+		Inertia: *inertia,
 	}
 }
 
@@ -50,14 +51,11 @@ func (m *Middleware) Register() {
 		Next: utils.IsEnabled(m.Cfg.Middleware.Pprof.Enable),
 	}))
 
-	m.App.Use(filesystem.New(filesystem.Config{
-		Next:   utils.IsEnabled(m.Cfg.Middleware.FileSystem.Enable),
-		Root:   http.Dir(m.Cfg.Middleware.FileSystem.Root),
-		Browse: m.Cfg.Middleware.FileSystem.Browse,
-		MaxAge: m.Cfg.Middleware.FileSystem.MaxAge,
-	}))
-
 	m.App.Get(m.Cfg.Middleware.Monitor.Path, monitor.New(monitor.Config{
 		Next: utils.IsEnabled(m.Cfg.Middleware.Monitor.Enable),
 	}))
+
+	m.App.Use(inertia.New(
+		m.Inertia,
+	))
 }

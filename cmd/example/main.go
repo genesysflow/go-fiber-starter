@@ -10,6 +10,7 @@ import (
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap"
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/cache"
 	"github.com/genesysflow/go-fiber-starter/internal/bootstrap/database"
+	"github.com/genesysflow/go-fiber-starter/internal/inertia"
 	"github.com/genesysflow/go-fiber-starter/utils/config"
 	_ "go.uber.org/automaxprocs"
 )
@@ -46,6 +47,8 @@ func main() {
 		fx.Provide(middleware.NewMiddleware),
 		// router
 		fx.Provide(router.NewRouter),
+		// inertia
+		fx.Provide(inertia.NewInertia),
 
 		// provide modules
 		article.NewArticleModule,

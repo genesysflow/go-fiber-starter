@@ -14,12 +14,15 @@ import (
 	"github.com/genesysflow/go-fiber-starter/utils/config"
 	"github.com/genesysflow/go-fiber-starter/utils/response"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/jet"
 	"github.com/rs/zerolog"
 	"go.uber.org/fx"
 )
 
 // initialize the webserver
 func NewFiber(cfg *config.Config) *fiber.App {
+	engine := jet.New("./frontend", ".jet")
+
 	// setup
 	app := fiber.New(fiber.Config{
 		ServerHeader:          cfg.App.Name,
@@ -29,10 +32,13 @@ func NewFiber(cfg *config.Config) *fiber.App {
 		IdleTimeout:           cfg.App.IdleTimeout * time.Second,
 		EnablePrintRoutes:     cfg.App.PrintRoutes,
 		DisableStartupMessage: true,
+		Views:                 engine,
 	})
 
 	// pass production config to check it
 	response.IsProduction = cfg.App.Production
+
+	app.Static("/", "./frontend")
 
 	return app
 }
