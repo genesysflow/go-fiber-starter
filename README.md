@@ -79,6 +79,9 @@ $ cd go-fiber-starter
 # Download dependencies
 $ go get -v ./...
 
+# Start vite 
+$ cd frontend && yarn dev
+
 # Run the project
 $ go run cmd/example/main.go
 

@@ -38,7 +38,7 @@ func NewFiber(cfg *config.Config) *fiber.App {
 	// pass production config to check it
 	response.IsProduction = cfg.App.Production
 
-	app.Static("/", "./frontend")
+	app.Static("/assets", "./frontend/dist/assets")
 
 	return app
 }

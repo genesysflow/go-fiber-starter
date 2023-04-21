@@ -5,7 +5,7 @@ port = ":8080"
 idle-timeout = 5 # As seconds
 print-routes = false
 prefork = true
-production = true
+production = false
 url = "http://localhost/"
 
 [app.tls]

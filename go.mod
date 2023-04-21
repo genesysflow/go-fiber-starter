@@ -11,6 +11,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.44.0
 	github.com/gofiber/jwt/v2 v2.2.7
 	github.com/gofiber/swagger v0.1.10
+	github.com/gofiber/template v1.8.0
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/golang/mock v1.6.0
 	github.com/pelletier/go-toml/v2 v2.0.7
@@ -18,6 +19,7 @@ require (
 	github.com/rs/zerolog v1.29.1
 	github.com/stretchr/testify v1.8.2
 	github.com/swaggo/swag v1.8.12
+	github.com/torenware/vite-go v0.5.6
 	go.uber.org/automaxprocs v1.5.2
 	go.uber.org/fx v1.19.2
 	gorm.io/driver/postgres v1.5.0
@@ -36,7 +38,6 @@ require (
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-openapi/spec v0.20.8 // indirect
 	github.com/go-openapi/swag v0.22.3 // indirect
-	github.com/gofiber/template v1.8.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
@@ -57,7 +58,6 @@ require (
 	github.com/savsgio/gotils v0.0.0-20230208104028-c358bd845dee // indirect
 	github.com/swaggo/files/v2 v2.0.0 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
-	github.com/torenware/vite-go v0.5.6 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.45.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect

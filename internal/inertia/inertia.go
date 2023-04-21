@@ -56,8 +56,9 @@ func NewInertia(cfg *config.Config, log zerolog.Logger) *Inertia {
 	config := &vueglue.ViteConfig{
 		Environment: env,
 		AssetsPath:  "dist",
-		EntryPoint:  "src/main.js",
+		EntryPoint:  "src/main.ts",
 		Platform:    "vue",
+		ViteVersion: "3",
 		FS:          os.DirFS("frontend"),
 	}
 
