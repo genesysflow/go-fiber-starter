@@ -31,7 +31,10 @@ func (r *Router) Register() {
 		return c.SendString("Pong! 👋")
 	})
 
-	r.App.Get("/inertia", r.Inertia.Render("Main", make(map[string]interface{})))
+	var m = make(map[string]interface{})
+	m["userName"] = "John Doe"
+
+	r.App.Get("/inertia", r.Inertia.Render("Main", m))
 
 	// Swagger Documentation
 	r.App.Get("/swagger/*", swagger.HandlerDefault)
