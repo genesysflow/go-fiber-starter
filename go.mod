@@ -19,7 +19,7 @@ require (
 	github.com/stretchr/testify v1.8.2
 	github.com/swaggo/swag v1.16.1
 	go.uber.org/automaxprocs v1.5.2
-	go.uber.org/fx v1.19.2
+	go.uber.org/fx v1.19.3
 	gorm.io/driver/postgres v1.5.0
 	gorm.io/gorm v1.25.1
 )
