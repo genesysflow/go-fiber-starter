@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/validator/v10 v10.13.0
 	github.com/gofiber/fiber/v2 v2.46.0
 	github.com/gofiber/jwt/v2 v2.2.7
-	github.com/gofiber/swagger v0.1.11
+	github.com/gofiber/swagger v0.1.12
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/golang/mock v1.6.0
 	github.com/pelletier/go-toml/v2 v2.0.7
