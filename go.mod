@@ -16,7 +16,7 @@ require (
 	github.com/pelletier/go-toml/v2 v2.0.8
 	github.com/redis/go-redis/v9 v9.0.4
 	github.com/rs/zerolog v1.29.1
-	github.com/stretchr/testify v1.8.3
+	github.com/stretchr/testify v1.8.4
 	github.com/swaggo/swag v1.16.1
 	go.uber.org/automaxprocs v1.5.2
 	go.uber.org/fx v1.19.3
